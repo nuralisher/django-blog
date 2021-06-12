@@ -62,7 +62,7 @@ class BlogPreferenceList(generics.ListCreateAPIView):
     serializer_class = BlogPreferenceSerializer
 
 
-class BlogPreferenceDetail(generics.RetrieveDestroyAPIView):
+class BlogPreferenceDetail(generics.DestroyAPIView):
     permission_classes = (IsUserOrReadOnly, )
     queryset = BlogPreference.objects.all()
     serializer_class = BlogPreferenceSerializer
@@ -74,8 +74,8 @@ class LikeCommentList(generics.ListCreateAPIView):
     serializer_class = LikeCommentSerializer
 
 
-class LikeCommentDetail(generics.RetrieveDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly)
+class LikeCommentDetail(generics.DestroyAPIView):
+    permission_classes = (IsUserOrReadOnly, )
     queryset = LikeComment.objects.all()
     serializer_class = LikeCommentSerializer
 

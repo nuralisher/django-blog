@@ -11,7 +11,7 @@ urlpatterns = [
     path('comments/', CommentList.as_view()),
     path('comments/<int:pk>/', CommentDetail.as_view()),
     path('comments/likes/', LikeCommentList.as_view()),
-    path('comments/likes/<int:pk>', LikeCommentDetail.as_view()),
+    path('comments/likes/<int:pk>/', LikeCommentDetail.as_view()),
     path('users/', UserList.as_view()),
     path('users/<int:pk>/', UserDetail.as_view()),
 ]
