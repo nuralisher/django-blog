@@ -40,8 +40,8 @@ class Comment(models.Model):
 
 
 class LikeComment(models.Model):
-    user = models.ForeignKey(User, models.SET_NULL, null=True, related_name='likes')
-    comment = models.ForeignKey(Comment, models.SET_NULL, null=True)
+    user = models.ForeignKey(User, models.SET_NULL, null=True, related_name='comment_likes')
+    comment = models.ForeignKey(Comment, models.SET_NULL, null=True, related_name='likes')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
